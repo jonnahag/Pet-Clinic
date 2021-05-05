@@ -2,26 +2,31 @@
 Test Navigates to chrome Home Page
 Begin WebTest
     OPEN BROWSER                                       about:blank                         ${BROWSER}
-    #Maximize Browser Window
-    Set Selenium Speed                                0.07
 
 Go To Web Page
      Load Page
      Verify Page Loaded
+
 Load Page
      Go to                                            ${URL}
+
 Verify Page Loaded
     ${actualTerm}                                     get text                          xpath:/html/body/app-root/app-welcome/h1
     Should Be Equal                                   ${Welcome_Message}                ${actualTerm}
+
 All Owners
     Click Element                                    xpath:/html/body/app-root/div[1]/nav/div/ul/li[2]/a
     Click Element                                    xpath:/html/body/app-root/div[1]/nav/div/ul/li[2]/ul/li[1]/a
+
 Select A Owner From The List
     Click Element                                    xpath:/html/body/app-root/app-owner-list/div/div/div/table/tbody/tr[9]/td[1]/a
+
 Add New Pet
      Click Element                                   xpath:/html/body/app-root/app-owner-detail/div/div/button[3]
+
 Input New Pet Detalis
     Click Element                                    id=name
+
 Pet Details
     [Arguments]                                      ${Pet_Name}                          ${Birth_Date}
     Name                                             ${Pet_Name}
@@ -29,9 +34,11 @@ Pet Details
     Click Element                                    id=type
     Click Element                                    xpath://*[@id="type"]/option[2]
     Click Element                                    xpath:/html/body/app-root/app-pet-add/div/div/form/div[6]/div/button[2]
+
 Name
     [Arguments]                                       ${Pet_Name}
     Input Text                                        id=name                             ${Pet_Name}
+
 Birth Date
     [Arguments]                                       ${Birth_Date}
     Input Text                                        xpath:/html/body/app-root/app-pet-add/div/div/form/div[4]/div/input          ${Birth_Date}
