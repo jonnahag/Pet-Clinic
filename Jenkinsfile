@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build API') {
                     steps {
-                        sh 'API/spring-petclinic-rest-master && nohup mvn spring-boot:run &'
+                        sh 'cd API/spring-petclinic-rest-master && nohup mvn spring-boot:run &'
                     }
                 }
 
